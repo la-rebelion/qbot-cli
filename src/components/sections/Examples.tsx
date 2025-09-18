@@ -9,62 +9,57 @@ export const Examples = () => {
 
   const developerExamples = [
     {
-      title: "MCP Testing Made Simple",
-      description: "Instantly test API endpoints as MCP tools without boilerplate code",
-      command: "hapi run petstore --headless",
+      title: "Kubernetes Operations",
+      description: "Manage K8s clusters using natural language instead of kubectl commands",
+      command: "qbot --url http://localhost:3000/mcp",
       output: [
-        "🚀 HAPI CLI v2.1.0",
-        "📄 Loading petstore...",
-        "✅ Found 8 endpoints",
-        "🔧 Generating test suite...",
-        "✨ Ready! HAPI MCP server running on :3000",
+        "🤖 QBot CLI v1.0.0",
+        "🔗 Connected to MCP server",
+        "✅ Found 12 tools available",
+        "💬 LLM ready for conversation",
         "",
-        "Available endpoints:",
-        "  GET  /pet/findByStatus",
-        "  POST /pet",
-        "  GET  /pet/:id"
+        "qbot> show me all failing pods in default namespace",
+        "🔍 Executing: get_pods_by_status...",
+        "📊 Found 2 failing pods:",
+        "  - api-server-7d4c8b (CrashLoopBackOff)",
+        "  - worker-3f2a1b (ImagePullBackOff)"
       ],
-      benefits: ["Zero setup time", "Automatic endpoint discovery", "Interactive testing tools UI", "Ideal for brownfield projects integrating with MCP"]
+      benefits: ["No kubectl memorization", "Context-aware queries", "Natural language DevOps", "Works with any K8s MCP server"]
     },
     {
-      title: "AI Integration",
-      description: "Instantly create APIs as an MCP server, usable by AI agents",
-      command: "hapi run my-microservices --mcp",
+      title: "Infrastructure Monitoring",
+      description: "Query monitoring systems and get insights using conversational interface",
+      command: "qbot --url http://monitoring.company.com/mcp",
       output: [
-        "🚀 HAPI CLI v2.1.0",
-        "📄 Loading my-microservices...",
-        "🤖 Creating MCP server...",
-        "🔗 Exposing 12 tools to AI agents",
-        "✨ MCP server running on :3000",
+        "🤖 QBot CLI v1.0.0",
+        "🔗 Connected to monitoring MCP server",
+        "✅ Found 8 monitoring tools",
+        "💬 Ollama llama3.1 ready",
         "",
-        "Available MCP tools:",
-        "  - get_user_profile",
-        "  - create_user", 
-        "  - update_user_settings",
-        "",
-        "Available endpoints:",
-        "  GET  /pet/findByStatus",
-        "  POST /pet",
-        "  GET  /pet/:id"
+        "qbot> what's the CPU usage on production servers?",
+        "📈 Executing: get_cpu_metrics...",
+        "🖥️  Production CPU usage:",
+        "  - prod-web-01: 78% (high)",
+        "  - prod-db-01: 45% (normal)"
       ],
-      benefits: ["AI-ready instantly", "MCP Clients compatible", "Zero configuration", "Ideal for greenfield projects from the ground up"]
+      benefits: ["Natural monitoring queries", "Multi-system integration", "Conversational insights", "LLM-powered analysis"]
     }
   ];
 
   const businessExamples = [
     {
-      title: "PM Testing APIs Without Engineers",
-      description: "Product managers can test API functionality independently",
-      scenario: "Upload API file → Get instant testing interface → Test with real data",
-      interface: "Clean web UI with form inputs and JSON responses",
-      benefits: ["No engineering dependency", "Real-time validation", "Business-friendly interface"]
+      title: "SRE Team Incident Response",
+      description: "Site Reliability Engineers can quickly diagnose and resolve issues",
+      scenario: "Connect to monitoring MCP → Ask in natural language → Get actionable insights",
+      interface: "Terminal-based conversational interface with structured outputs",
+      benefits: ["Faster incident resolution", "Natural language queries", "Unified tool access"]
     },
     {
-      title: "Founder Using AI with No-Code",
-      description: "Startup founders can integrate APIs with AI tools effortlessly",
-      scenario: "Drag & drop API spec → Auto-generate AI tools → Use in ChatGPT/Claude",
-      interface: "Visual workflow builder with AI agent integration",
-      benefits: ["No technical knowledge required", "AI-first workflows", "Rapid prototyping"]
+      title: "DevOps Onboarding",
+      description: "New team members can be productive immediately without memorizing commands",
+      scenario: "Install QBot → Connect to team MCP server → Start asking questions",
+      interface: "Interactive CLI with help system and contextual guidance",
+      benefits: ["Reduced learning curve", "Self-service infrastructure", "Consistent workflows"]
     }
   ];
 
@@ -73,10 +68,10 @@ export const Examples = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
-            See HAPI CLI in Action
+            See QBot in Action
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Real examples for developers and business teams
+            Real examples for DevOps teams and infrastructure management
           </p>
         </div>
 
@@ -84,11 +79,11 @@ export const Examples = () => {
           <TabsList className="grid w-full grid-cols-2 mb-8">
             <TabsTrigger value="developers" className="flex items-center gap-2">
               <Code className="w-4 h-4" />
-              For Developers
+              DevOps Engineers
             </TabsTrigger>
             <TabsTrigger value="business" className="flex items-center gap-2">
               <User className="w-4 h-4" />
-              For Business Teams
+              SRE Teams
             </TabsTrigger>
           </TabsList>
 
@@ -141,7 +136,7 @@ export const Examples = () => {
                           </div>
                         ))}
                       </div>
-                      <Button variant="outline" className="w-full mt-4" onClick={() => window.location.href = 'https://docs.mcp.com.ai/components/hapi-server/hapi-cli'}>
+                      <Button variant="outline" className="w-full mt-4" onClick={() => window.location.href = 'https://github.com/la-rebelion/qbot-cli#usage'}>
                         <ExternalLink className="w-4 h-4" />
                         View Full Documentation
                       </Button>
@@ -200,9 +195,9 @@ export const Examples = () => {
                           </div>
                         ))}
                       </div>
-                      <Button variant="secondary" className="w-full mt-4" onClick={() => window.location.href = 'https://run.mcp.com.ai'}>
+                      <Button variant="secondary" className="w-full mt-4" onClick={() => window.location.href = 'https://github.com/la-rebelion/qbot-cli/releases'}>
                         <ExternalLink className="w-4 h-4" />
-                        Try runMCP Interface
+                        Download QBot CLI
                       </Button>
                     </div>
                   </div>
@@ -222,10 +217,10 @@ export const Examples = () => {
                 </div>
                 <div>
                   <blockquote className="text-lg font-medium mb-2">
-                    "I replaced 200+ tools with one CLI command. Magic."
+                    "QBot eliminated the need to memorize dozens of kubectl commands."
                   </blockquote>
                   <cite className="text-sm text-muted-foreground">
-                    Senior Developer at TechCorp
+                    Senior DevOps Engineer at CloudTech
                   </cite>
                 </div>
               </div>
@@ -240,10 +235,10 @@ export const Examples = () => {
                 </div>
                 <div>
                   <blockquote className="text-lg font-medium mb-2">
-                    "I can finally test APIs without waiting for engineering."
+                    "Our incident response time dropped by 60% using QBot."
                   </blockquote>
                   <cite className="text-sm text-muted-foreground">
-                    CEO at StartupXYZ
+                    SRE Lead at FinanceCorps
                   </cite>
                 </div>
               </div>

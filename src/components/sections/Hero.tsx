@@ -8,8 +8,8 @@ export const Hero = () => {
 
   const handleCopy = (platform: 'linux' | 'windows') => () => {
     const command = platform === 'linux'
-      ? "curl -fsSL https://get.mcp.com.ai/hapi.sh | bash"
-      : "irm https://get.mcp.com.ai/hapi.ps1 | iex";
+      ? "curl -fsSL https://get.mcp.com.ai/qbot.sh | bash"
+      : "irm https://get.mcp.com.ai/qbot.ps1 | iex";
     navigator.clipboard.writeText(command);
     setCopied(true);
     setTimeout(() => setCopied(false), 500);
@@ -24,31 +24,31 @@ export const Hero = () => {
           {/* Hero Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/10 text-primary-foreground text-sm font-medium">
             <Terminal className="w-4 h-4" />
-            The Complete HAPI MCP Stack
+            Natural Language DevOps Interface
           </div>
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            Build & Chat with{" "}
+            Chat with your{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              MCP tools
+              infrastructure
             </span>{" "}
-            instantly
+            naturally
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Complete MCP toolkit: <span className="text-foreground font-medium">HAPI CLI</span> turns any API into MCP tools, 
-            <span className="text-foreground font-medium"> QBot</span> provides natural-language terminal interface to explore and use them.
+            <span className="text-foreground font-medium">QBot</span> connects to MCP servers and lets DevOps engineers 
+            interact with infrastructure using natural language instead of memorizing CLI commands.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-            <Button variant="cta" size="xl" className="min-w-[200px]" onClick={() => window.location.href = 'https://github.com/la-rebelion/hapimcp/releases'}>
+            <Button variant="cta" size="xl" className="min-w-[200px]" onClick={() => window.location.href = 'https://github.com/la-rebelion/qbot-cli/releases'}>
               <Download className="w-5 h-5" />
-              Get HAPI Stack
+              Get QBot CLI
             </Button>
-            <Button variant="outline" size="xl" className="min-w-[200px]" onClick={() => window.location.href = 'https://youtu.be/kl5c67hvNW0?si=36kJriAtLcBseZtO'}>
+            <Button variant="outline" size="xl" className="min-w-[200px]" onClick={() => window.location.href = 'https://github.com/la-rebelion/qbot-cli#demo'}>
               <Play className="w-5 h-5" />
               See it in Action
             </Button>
@@ -57,9 +57,9 @@ export const Hero = () => {
           {/* Quick Install */}
           <div className="pt-8 space-y-6">
             <div>
-              <p className="text-sm text-muted-foreground mb-3">Install HAPI CLI:</p>
+              <p className="text-sm text-muted-foreground mb-3">Install QBot CLI:</p>
               <div className="inline-flex items-center gap-3 px-4 py-3 bg-card/50 backdrop-blur-sm border border-border rounded-lg">
-                <code className="font-mono text-primary">curl -fsSL https://get.mcp.com.ai/hapi.sh | bash</code>
+                <code className="font-mono text-primary">curl -fsSL https://get.mcp.com.ai/qbot.sh | bash</code>
                 <Button variant="ghost" size="sm" className="h-8 w-8 p-0"
                         onClick={handleCopy('linux')}>
                         {copied ? (
@@ -71,9 +71,9 @@ export const Hero = () => {
               </div>
             </div>
             <div>
-              <p className="text-sm text-muted-foreground mb-3">Get QBot (Terminal UI):</p>
+              <p className="text-sm text-muted-foreground mb-3">Connect to MCP server:</p>
               <div className="inline-flex items-center gap-3 px-4 py-3 bg-card/50 backdrop-blur-sm border border-border rounded-lg">
-                <code className="font-mono text-secondary">git clone https://github.com/la-rebelion/hapimcp && cd hapimcp/examples/qbot</code>
+                <code className="font-mono text-secondary">qbot --url http://localhost:3000/mcp</code>
               </div>
             </div>
           </div>

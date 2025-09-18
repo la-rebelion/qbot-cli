@@ -7,10 +7,10 @@ import { BetaKeyModal } from "@/components/BetaKeyModal";
 export const Pricing = () => {
   const [showBetaModal, setShowBetaModal] = useState(false);
   const features = [
-    "Up to 100 endpoints",
-    "100 requests/day",
-    "Full functionality for 15 days",
-    "No API Key support",
+    "Unlimited MCP connections",
+    "Natural language interface",
+    "Multi-LLM provider support",
+    "Full DevOps workflow support",
     "Valid beta key required",
     "No unexpected charges",
     "Early access to all features"
@@ -21,10 +21,10 @@ export const Pricing = () => {
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Start Your API Journey
+            Start Your DevOps Revolution
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Free while in beta. No surprises, no hidden costs.
+            Free while in beta. Transform your infrastructure workflows.
           </p>
         </div>
 
@@ -57,8 +57,8 @@ export const Pricing = () => {
               <div className="bg-muted/50 rounded-lg p-4 space-y-3">
                 <h4 className="font-semibold text-foreground">Beta Promise</h4>
                 <p className="text-sm text-muted-foreground">
-                  Take HAPI for a spin at no cost during our beta period. Explore all features 
-                  and help us shape the future of API-first AI.
+                  Take QBot for a spin at no cost during our beta period. Explore natural language DevOps 
+                  and help us shape the future of infrastructure management.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   You will be informed beforehand about any changes that may affect your access 

@@ -5,21 +5,21 @@ export const HowItWorks = () => {
   const steps = [
     {
       icon: FileText,
-      title: "Pick your API spec",
-      description: "OpenAPI, Swagger, REST - HAPI CLI works with any API specification format.",
-      details: ["OpenAPI 3.0+", "REST APIs", "OAuth 2.0 Dynamic Client Registration"]
+      title: "Connect to MCP Server",
+      description: "Point QBot to any MCP server running your infrastructure tools and APIs.",
+      details: ["Any MCP server", "Local or remote", "Auto-discovery of tools", "Secure connections"]
     },
     {
       icon: Terminal,
-      title: "Run a single command",
-      description: "One simple CLI command transforms your API into a usable MCP Server.",
-      details: ["No complex setup", "Zero configuration", "Works anywhere", "Cross-platform"]
+      title: "Natural language interface",
+      description: "Type what you want in plain English instead of memorizing CLI commands.",
+      details: ["Conversational interface", "LLM-powered understanding", "Context-aware responses", "REPL environment"]
     },
     {
       icon: Zap,
-      title: "Use instantly",
-      description: "Your API is now ready as a tool, AI agent, or testing interface.",
-      details: ["MCP server ready", "AI agent compatible", "Testing interface", "Developer Experience friendly"]
+      title: "Execute instantly",
+      description: "QBot translates your requests into proper tool calls and shows results.",
+      details: ["Real-time execution", "Structured responses", "DevOps workflows", "Multi-tool chaining"]
     }
   ];
 
@@ -31,7 +31,7 @@ export const HowItWorks = () => {
             How It Works
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Three simple steps to transform any API into a powerful, usable tool
+            Three simple steps to start chatting with your infrastructure
           </p>
         </div>
 
@@ -92,8 +92,8 @@ export const HowItWorks = () => {
                 <div className="w-16 h-16 mx-auto rounded-lg bg-primary/10 flex items-center justify-center">
                   <FileText className="w-8 h-8 text-primary" />
                 </div>
-                <p className="text-sm font-medium">API Spec</p>
-                <p className="text-xs text-muted-foreground">swagger.json</p>
+                <p className="text-sm font-medium">MCP Server</p>
+                <p className="text-xs text-muted-foreground">Tools & APIs</p>
               </div>
               
               <ArrowRight className="w-6 h-6 text-primary animate-pulse" />
@@ -102,8 +102,8 @@ export const HowItWorks = () => {
                 <div className="w-16 h-16 mx-auto rounded-lg bg-gradient-primary flex items-center justify-center">
                   <Terminal className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <p className="text-sm font-medium">HAPI CLI</p>
-                <p className="text-xs text-muted-foreground">Magic happens</p>
+                <p className="text-sm font-medium">QBot CLI</p>
+                <p className="text-xs text-muted-foreground">Natural language</p>
               </div>
               
               <ArrowRight className="w-6 h-6 text-primary animate-pulse" />
@@ -112,8 +112,8 @@ export const HowItWorks = () => {
                 <div className="w-16 h-16 mx-auto rounded-lg bg-secondary/20 flex items-center justify-center">
                   <Zap className="w-8 h-8 text-secondary" />
                 </div>
-                <p className="text-sm font-medium">Usable Tool</p>
-                <p className="text-xs text-muted-foreground">AI-ready</p>
+                <p className="text-sm font-medium">DevOps Magic</p>
+                <p className="text-xs text-muted-foreground">Just works</p>
               </div>
             </div>
           </div>

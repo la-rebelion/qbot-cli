@@ -1,47 +1,47 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock, DollarSign, Users, Zap, Target, Workflow, Terminal } from "lucide-react";
 
-export const WhyHapi = () => {
+export const WhyQBot = () => {
   const benefits = [
     {
       icon: Clock,
-      title: "Instant API-to-MCP",
-      description: "HAPI CLI converts any API to MCP tools in seconds, no configuration needed",
-      metric: "90% faster setup",
+      title: "Zero Learning Curve",
+      description: "Talk to your infrastructure in plain English - no commands to memorize",
+      metric: "Instant productivity",
       color: "text-primary"
     },
     {
       icon: Terminal,
-      title: "Natural Language Interface",
-      description: "QBot provides conversational terminal access to all your MCP tools",
-      metric: "Plain English",
+      title: "Natural Language DevOps",
+      description: "Connect to any MCP server and manage infrastructure conversationally",
+      metric: "Human-friendly",
       color: "text-secondary"
     },
     {
       icon: Users,
-      title: "Team Empowerment",
-      description: "Enable non-technical teams to work with APIs through natural conversation",
-      metric: "Zero dependencies",
+      title: "Team Onboarding",
+      description: "New DevOps engineers become productive immediately without CLI expertise",
+      metric: "Self-service ready",
       color: "text-primary"
     },
     {
       icon: Zap,
-      title: "AI-First Complete",
-      description: "Full MCP ecosystem: create tools with HAPI, explore with QBot",
-      metric: "End-to-end",
+      title: "Multi-Tool Integration",
+      description: "Single interface for Kubernetes, monitoring, CI/CD, and cloud platforms",
+      metric: "Unified workflow",
       color: "text-secondary"
     },
     {
       icon: Target,
-      title: "Unified Workflow",
-      description: "Seamless integration between tool creation and interactive exploration",
-      metric: "One stack",
+      title: "Intelligent Context",
+      description: "LLM-powered understanding of DevOps workflows and infrastructure patterns",
+      metric: "Context-aware",
       color: "text-primary"
     },
     {
       icon: Workflow,
       title: "Multi-LLM Support",
-      description: "QBot works with OpenAI, Groq, Anthropic, Ollama, and more providers",
+      description: "Works with Ollama, OpenAI, Anthropic, and other LLM providers",
       metric: "Provider agnostic",
       color: "text-secondary"
     }
@@ -49,34 +49,34 @@ export const WhyHapi = () => {
 
   const audiences = [
     {
-      title: "For Development Teams",
+      title: "For DevOps Engineers",
       benefits: [
-        "HAPI CLI: Instant API-to-MCP conversion",
-        "QBot: Interactive testing and exploration",
-        "Seamless CI/CD integration", 
-        "Universal API and LLM compatibility"
+        "Natural language infrastructure queries",
+        "No command memorization required",
+        "Faster incident response times", 
+        "Integrated tool access via MCP"
       ],
-      icon: "💻"
+      icon: "⚙️"
     },
     {
-      title: "For Business Teams",  
+      title: "For SRE Teams",  
       benefits: [
-        "Chat with APIs using natural language",
-        "No technical knowledge required",
-        "QBot's conversational interface",
-        "Rapid prototype validation"
+        "Faster troubleshooting workflows",
+        "Conversational monitoring queries",
+        "Unified incident response interface",
+        "Reduced cognitive load during incidents"
       ],
-      icon: "🎯"
+      icon: "🚨"
     },
     {
-      title: "For Organizations",
+      title: "For Platform Teams",
       benefits: [
-        "Complete MCP ecosystem solution",
-        "Multi-LLM provider support", 
-        "Improved team collaboration",
-        "Future-proof AI integration stack"
+        "Self-service infrastructure access",
+        "Consistent tooling across teams",
+        "Reduced support tickets", 
+        "Scalable knowledge sharing"
       ],
-      icon: "🏢"
+      icon: "🏗️"
     }
   ];
 
@@ -85,10 +85,10 @@ export const WhyHapi = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
-            Why Choose the HAPI MCP Stack?
+            Why Choose QBot?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Complete toolkit to build, deploy, and interact with MCP tools - empowering your entire organization
+            The natural language interface that transforms how DevOps teams work
           </p>
         </div>
 
@@ -152,25 +152,25 @@ export const WhyHapi = () => {
         <div className="mt-20 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 rounded-2xl p-8">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold mb-2">Real Impact</h3>
-            <p className="text-muted-foreground">See what teams achieve with the HAPI MCP Stack</p>
+            <p className="text-muted-foreground">See what DevOps teams achieve with QBot</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-1">90%</div>
-              <div className="text-sm text-muted-foreground">Faster Setup</div>
+              <div className="text-3xl font-bold text-primary mb-1">60%</div>
+              <div className="text-sm text-muted-foreground">Faster Incident Response</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-secondary mb-1">60%</div>
-              <div className="text-sm text-muted-foreground">Cost Reduction</div>
+              <div className="text-3xl font-bold text-secondary mb-1">80%</div>
+              <div className="text-sm text-muted-foreground">Reduced Command Errors</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary mb-1">3x</div>
-              <div className="text-sm text-muted-foreground">Faster Delivery</div>
+              <div className="text-sm text-muted-foreground">Faster Onboarding</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-secondary mb-1">100%</div>
-              <div className="text-sm text-muted-foreground">Team Independence</div>
+              <div className="text-sm text-muted-foreground">Natural Language</div>
             </div>
           </div>
         </div>

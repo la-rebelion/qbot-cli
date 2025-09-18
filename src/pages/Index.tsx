@@ -2,7 +2,7 @@ import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Examples } from "@/components/sections/Examples";
-import { WhyHapi } from "@/components/sections/WhyHapi";
+import { WhyQBot } from "@/components/sections/WhyQBot";
 import { Pricing } from "@/components/sections/Pricing";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
@@ -23,8 +23,8 @@ const Index = () => {
       <div id="examples">
         <Examples />
       </div>
-      <div id="why-hapi">
-        <WhyHapi />
+      <div id="why-qbot">
+        <WhyQBot />
       </div>
       <div id="pricing">
         <Pricing />

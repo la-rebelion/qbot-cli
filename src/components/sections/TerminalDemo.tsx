@@ -7,27 +7,28 @@ export const TerminalDemo = () => {
 
   const steps = [
     {
-      title: "Create MCP Tools",
-      command: "hapi run petstore --mcp",
-      description: "Convert any API into MCP tools instantly with HAPI CLI", 
+      title: "Connect to MCP Server",
+      command: "qbot --url http://localhost:3000/mcp",
+      description: "Connect to any MCP server and discover available infrastructure tools", 
       output: [
-        "🚀 HAPI CLI v2.1.0",
-        "📄 Loading petstore...",
-        "✅ Found 8 endpoints", 
-        "🔧 Generating MCP server...",
-        "✨ MCP server running on :3000"
+        "🤖 QBot CLI v1.0.0",
+        "🔗 Connected to MCP server",
+        "✅ Found 12 tools available",
+        "💬 Ollama llama3.1 ready for conversation",
+        "qbot> Hello! What can you help me with?"
       ]
     },
     {
-      title: "Chat with Tools",
-      command: "qbot --url http://localhost:3000/mcp",
-      description: "Use natural language to explore and interact with MCP tools",
+      title: "Natural Language DevOps",
+      command: 'qbot> show me all failing pods in production',
+      description: "Interact with your infrastructure using plain English commands",
       output: [
-        "🤖 QBot REPL v1.0.0",
-        "🔗 Connected to MCP server",
-        "✅ Found 8 tools available",
-        "💬 LLM ready for conversation",
-        "qbot> Hello! What can you help me with?"
+        "🔍 Understanding your request...",
+        "🛠️  Executing: get_pods_by_status",
+        "📊 Found 2 failing pods in production:",
+        "  • api-server-7d4c8b (CrashLoopBackOff)",
+        "  • worker-3f2a1b (ImagePullBackOff)",
+        "💡 Would you like me to investigate these issues?"
       ]
     }
   ];
@@ -49,8 +50,8 @@ export const TerminalDemo = () => {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold mb-2">See the HAPI MCP Stack in Action</h2>
-        <p className="text-muted-foreground">Watch the complete workflow: create MCP tools, then chat with them</p>
+        <h2 className="text-2xl font-bold mb-2">See QBot in Action</h2>
+        <p className="text-muted-foreground">Watch how natural language transforms DevOps workflows</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -111,11 +112,11 @@ export const TerminalDemo = () => {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-              <span className="text-sm text-muted-foreground">Complete MCP ecosystem</span>
+              <span className="text-sm text-muted-foreground">Natural language interface</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-              <span className="text-sm text-muted-foreground">Natural language interaction</span>
+              <span className="text-sm text-muted-foreground">DevOps workflow automation</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '1s' }}></div>
