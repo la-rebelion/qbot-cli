@@ -24,29 +24,29 @@ export const Hero = () => {
           {/* Hero Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/10 text-primary-foreground text-sm font-medium">
             <Terminal className="w-4 h-4" />
-            Part of the HAPI Stack
+            The Complete HAPI MCP Stack
           </div>
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            Turn APIs into{" "}
+            Build & Chat with{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               MCP tools
             </span>{" "}
-            in seconds
+            instantly
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            HAPI CLI simplifies APIs so anyone can use them — from developers to business teams. 
-            <span className="text-foreground font-medium"> One command to turn your API into an AI-ready tool.</span>
+            Complete MCP toolkit: <span className="text-foreground font-medium">HAPI CLI</span> turns any API into MCP tools, 
+            <span className="text-foreground font-medium"> QBot</span> provides natural-language terminal interface to explore and use them.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
             <Button variant="cta" size="xl" className="min-w-[200px]" onClick={() => window.location.href = 'https://github.com/la-rebelion/hapimcp/releases'}>
               <Download className="w-5 h-5" />
-              Download HAPI CLI
+              Get HAPI Stack
             </Button>
             <Button variant="outline" size="xl" className="min-w-[200px]" onClick={() => window.location.href = 'https://youtu.be/kl5c67hvNW0?si=36kJriAtLcBseZtO'}>
               <Play className="w-5 h-5" />
@@ -55,30 +55,26 @@ export const Hero = () => {
           </div>
 
           {/* Quick Install */}
-          <div className="pt-8">
-            <p className="text-sm text-muted-foreground mb-3">Quick install:</p>
-            <div className="inline-flex items-center gap-3 px-4 py-3 bg-card/50 backdrop-blur-sm border border-border rounded-lg">
-              <code className="font-mono text-primary">curl -fsSL https://get.mcp.com.ai/hapi.sh | bash</code>
-              <Button variant="ghost" size="sm" className="h-8 w-8 p-0"
-                      onClick={handleCopy('linux')}>
-                      {copied ? (
-                        <Check className="w-4 h-4 text-primary" />
-                      ) : (
-                        <Copy className="w-4 h-4" />
-                      )}
-              </Button>
+          <div className="pt-8 space-y-6">
+            <div>
+              <p className="text-sm text-muted-foreground mb-3">Install HAPI CLI:</p>
+              <div className="inline-flex items-center gap-3 px-4 py-3 bg-card/50 backdrop-blur-sm border border-border rounded-lg">
+                <code className="font-mono text-primary">curl -fsSL https://get.mcp.com.ai/hapi.sh | bash</code>
+                <Button variant="ghost" size="sm" className="h-8 w-8 p-0"
+                        onClick={handleCopy('linux')}>
+                        {copied ? (
+                          <Check className="w-4 h-4 text-primary" />
+                        ) : (
+                          <Copy className="w-4 h-4" />
+                        )}
+                </Button>
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground mb-3 pt-4">Windows install:</p>
-            <div className="inline-flex items-center gap-3 px-4 py-3 bg-card/50 backdrop-blur-sm border border-border rounded-lg">
-              <code className="font-mono text-primary">irm https://get.mcp.com.ai/hapi.ps1 | iex</code>
-              <Button variant="ghost" size="sm" className="h-8 w-8 p-0"
-                      onClick={handleCopy('windows')}>
-                      {copied ? (
-                        <Check className="w-4 h-4 text-primary" />
-                      ) : (
-                        <Copy className="w-4 h-4" />
-                      )}
-              </Button>
+            <div>
+              <p className="text-sm text-muted-foreground mb-3">Get QBot (Terminal UI):</p>
+              <div className="inline-flex items-center gap-3 px-4 py-3 bg-card/50 backdrop-blur-sm border border-border rounded-lg">
+                <code className="font-mono text-secondary">git clone https://github.com/la-rebelion/hapimcp && cd hapimcp/examples/qbot</code>
+              </div>
             </div>
           </div>
         </div>

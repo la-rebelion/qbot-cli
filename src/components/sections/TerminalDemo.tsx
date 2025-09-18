@@ -7,27 +7,27 @@ export const TerminalDemo = () => {
 
   const steps = [
     {
-      title: "Developer View",
-      command: "hapi run petstore --headless",
-      description: "Test endpoints instantly with any MCP Client",
+      title: "Create MCP Tools",
+      command: "hapi run petstore --mcp",
+      description: "Convert any API into MCP tools instantly with HAPI CLI", 
       output: [
         "🚀 HAPI CLI v2.1.0",
         "📄 Loading petstore...",
-        "✅ Found 8 endpoints",
-        "🔧 Generating test suite...",
-        "✨ Ready! HAPI MCP server running on :3000"
+        "✅ Found 8 endpoints", 
+        "🔧 Generating MCP server...",
+        "✨ MCP server running on :3000"
       ]
     },
     {
-      title: "AI Integration",
-      command: "hapi run my-api --mcp",
-      description: "Wrap API as MCP server for AI agents",
+      title: "Chat with Tools",
+      command: "qbot --url http://localhost:3000/mcp",
+      description: "Use natural language to explore and interact with MCP tools",
       output: [
-        "🚀 HAPI CLI v2.1.0",
-        "📄 Loading my-api...",
-        "🤖 Creating MCP server...",
-        "🔗 Exposing 12 tools to AI agents",
-        "✨ MCP server running on :3000"
+        "🤖 QBot REPL v1.0.0",
+        "🔗 Connected to MCP server",
+        "✅ Found 8 tools available",
+        "💬 LLM ready for conversation",
+        "qbot> Hello! What can you help me with?"
       ]
     }
   ];
@@ -49,8 +49,8 @@ export const TerminalDemo = () => {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold mb-2">See HAPI CLI in Action</h2>
-        <p className="text-muted-foreground">Watch how one command transforms your API workflow</p>
+        <h2 className="text-2xl font-bold mb-2">See the HAPI MCP Stack in Action</h2>
+        <p className="text-muted-foreground">Watch the complete workflow: create MCP tools, then chat with them</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -111,15 +111,15 @@ export const TerminalDemo = () => {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-              <span className="text-sm text-muted-foreground">Simple one-command setup</span>
+              <span className="text-sm text-muted-foreground">Complete MCP ecosystem</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-              <span className="text-sm text-muted-foreground">Works with any OpenAPI/Swagger spec</span>
+              <span className="text-sm text-muted-foreground">Natural language interaction</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '1s' }}></div>
-              <span className="text-sm text-muted-foreground">Instant AI integration ready</span>
+              <span className="text-sm text-muted-foreground">Multi-LLM provider support</span>
             </div>
           </div>
 

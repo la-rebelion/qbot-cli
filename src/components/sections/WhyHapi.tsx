@@ -1,48 +1,48 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Clock, DollarSign, Users, Zap, Target, Workflow } from "lucide-react";
+import { Clock, DollarSign, Users, Zap, Target, Workflow, Terminal } from "lucide-react";
 
 export const WhyHapi = () => {
   const benefits = [
     {
       icon: Clock,
-      title: "Faster Prototyping",
-      description: "Cut development time from days to minutes with instant API tooling",
+      title: "Instant API-to-MCP",
+      description: "HAPI CLI converts any API to MCP tools in seconds, no configuration needed",
       metric: "90% faster setup",
       color: "text-primary"
     },
     {
-      icon: DollarSign,
-      title: "Lower Costs",
-      description: "Reduce tool sprawl and licensing costs with one unified solution",
-      metric: "60% cost reduction",
+      icon: Terminal,
+      title: "Natural Language Interface",
+      description: "QBot provides conversational terminal access to all your MCP tools",
+      metric: "Plain English",
       color: "text-secondary"
     },
     {
       icon: Users,
       title: "Team Empowerment",
-      description: "Enable non-technical teams to work with APIs independently",
+      description: "Enable non-technical teams to work with APIs through natural conversation",
       metric: "Zero dependencies",
       color: "text-primary"
     },
     {
       icon: Zap,
-      title: "AI-First Ready",
-      description: "Built for the AI era with instant MCP server generation",
-      metric: "One command",
+      title: "AI-First Complete",
+      description: "Full MCP ecosystem: create tools with HAPI, explore with QBot",
+      metric: "End-to-end",
       color: "text-secondary"
     },
     {
       icon: Target,
-      title: "Shorter Cycles",
-      description: "Accelerate development cycles with rapid API integration",
-      metric: "3x faster delivery",
+      title: "Unified Workflow",
+      description: "Seamless integration between tool creation and interactive exploration",
+      metric: "One stack",
       color: "text-primary"
     },
     {
       icon: Workflow,
-      title: "Less Tool Sprawl",
-      description: "Replace multiple API tools with one comprehensive solution",
-      metric: "Single CLI",
+      title: "Multi-LLM Support",
+      description: "QBot works with OpenAI, Groq, Anthropic, Ollama, and more providers",
+      metric: "Provider agnostic",
       color: "text-secondary"
     }
   ];
@@ -51,30 +51,30 @@ export const WhyHapi = () => {
     {
       title: "For Development Teams",
       benefits: [
-        "Instant API testing without complex setup",
-        "Automated MCP server generation",
+        "HAPI CLI: Instant API-to-MCP conversion",
+        "QBot: Interactive testing and exploration",
         "Seamless CI/CD integration", 
-        "Universal API compatibility"
+        "Universal API and LLM compatibility"
       ],
       icon: "💻"
     },
     {
-      title: "For Business Teams",
+      title: "For Business Teams",  
       benefits: [
-        "No engineering dependencies for API testing",
-        "Plain English API interaction",
-        "Rapid prototype validation",
-        "AI workflow enablement"
+        "Chat with APIs using natural language",
+        "No technical knowledge required",
+        "QBot's conversational interface",
+        "Rapid prototype validation"
       ],
       icon: "🎯"
     },
     {
       title: "For Organizations",
       benefits: [
-        "Reduced tool licensing costs",
-        "Faster time-to-market",
+        "Complete MCP ecosystem solution",
+        "Multi-LLM provider support", 
         "Improved team collaboration",
-        "Future-proof AI integration"
+        "Future-proof AI integration stack"
       ],
       icon: "🏢"
     }
@@ -85,10 +85,10 @@ export const WhyHapi = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
-            Why Choose HAPI CLI?
+            Why Choose the HAPI MCP Stack?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Transform your API workflow and empower your entire organization
+            Complete toolkit to build, deploy, and interact with MCP tools - empowering your entire organization
           </p>
         </div>
 
@@ -152,7 +152,7 @@ export const WhyHapi = () => {
         <div className="mt-20 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 rounded-2xl p-8">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold mb-2">Real Impact</h3>
-            <p className="text-muted-foreground">See what teams achieve with HAPI CLI</p>
+            <p className="text-muted-foreground">See what teams achieve with the HAPI MCP Stack</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
