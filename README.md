@@ -1,73 +1,106 @@
-# Welcome to your Lovable project
+QBot (REPL/TUI for MCP)
 
-## Project info
+Natural‑language REPL/TUI to explore and use MCP tools from your terminal, now with LLM chat powered by Abso and tool‑calling wired to your connected MCP server.
 
-**URL**: https://lovable.dev/projects/a413952b-9bd7-4cb9-b51a-0e2367517ac5
+## Quick start
 
-## How can I edit this code?
+- Run with Bun (preferred):
+  - `cd examples/qbot`
+  - `bun run dev -- --url http://localhost:3000/mcp`
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- Interactive REPL (`qbot>` prompt), history
+- MCP over HTTP/SSE: list/call tools, list/read resources, list/get prompts
+- LLM chat via Abso with MCP tool‑calling (OpenAI‑tools compatible)
+- Slash commands:
+  - Core: `/help`, `/connect`, `/status`, `/tools`, `/call`, `/resources`, `/read`, `/prompts`, `/prompt`, `/history`, `/log`, `/run`, `/exit`
+  - Logs: `/logtail [N]` (tail new log lines until Enter; optional last N lines)
+  - Logging: `/loglevel <debug|info|warn|error> [llm]` (sets global or LLM-only level)
+  - LLM: `/llm status`, `/llm provider <openai|groq|openrouter|anthropic|ollama>`, `/llm model <modelId>`, `/llm key <provider> <apiKey>`, `/llm base <provider> <baseUrl>`
+  - Session: `/reconnect` (confirm and auto-refresh), `/refresh` (reload tools/resources/prompts)
+- Safe shell runs: never auto‑exec, confirm before running
+- Config at `~/.qbot/config.json` (MCP headers, LLM provider/model/keys)
+  - Logging: `logging.level` controls global logs; `llm.logLevel` controls LLM pipeline logs. Levels: `debug`, `info`, `warn`, `error`.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a413952b-9bd7-4cb9-b51a-0e2367517ac5) and start prompting.
+## Key files
 
-Changes made via Lovable will be committed automatically to this repo.
+- `examples/qbot/src/index.ts` — REPL entrypoint + natural language chat
+- `examples/qbot/src/llm.ts` — Abso client and MCP tools integration (tool loop)
+- `examples/qbot/src/mcp/client.ts` — CLI MCP client wrapper (no browser OAuth)
+- `examples/qbot/src/commands.ts` — Slash commands (core + LLM management)
+- `examples/qbot/src/ui/print.ts` — ANSI color output, boxes
+- `examples/qbot/src/config.ts` — Load/save config (~/.qbot/config.json)
+- `examples/qbot/src/session.ts` — Chat session persistence
+- `examples/qbot/src/shell.ts` — Safe shell execution (no pipes/redirects)
 
-**Use your preferred IDE**
+## Usage
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Start a local MCP server first (e.g. examples/servers/hono-mcp)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+In another terminal:
 
-Follow these steps:
+- `cd examples/qbot`
+- `bun run dev -- --url http://localhost:3000/mcp`
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Example session
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- qbot> /connect http://localhost:3000/mcp
+- qbot> /tools
+- qbot> /call get_vengabus_times {}
+- qbot> /resources
+- qbot> /read docs://party-manual.md
+- qbot> /llm provider groq
+- qbot> /llm key groq <GROQ_API_KEY>
+- qbot> /llm model llama-3.3-70b-versatile
+- qbot> Hello! Please summarize the resource above and call any MCP tools you need.
+  
+If you change `mcp.url` or `mcp.headers` via `/set`, qbot will offer to reconnect immediately. You can also run `/reconnect` anytime; it will confirm and then auto-refresh MCP metadata. Use `/refresh` to manually resync tools/resources/prompts.
 
-# Step 3: Install the necessary dependencies.
-npm i
+**Tips**
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- Use `/log` to view current logs (now filtered).
+- Increase verbosity temporarily with:
+  - `/set logging.level=debug`
+  - `/set llm.logLevel=debug`
+- Reduce noise:
+  - `/set llm.logLevel=warn` to hide [llm] debug/info logs.
 
-**Edit a file directly in GitHub**
+A simple `/loglevel` command and config support to control verbosity without using /set by hand.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `/loglevel <debug|info|warn|error> [llm]`
+- Sets global log level by default; add “llm” to target LLM-only logs.
+- Applies immediately via mcp.setLogLevels and persists in config.
 
-**Use GitHub Codespaces**
+Config support
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Global: `logging.level`
+- LLM-specific: `llm.logLevel`
+- Both can be set via `/loglevel` or `/set`.
 
-## What technologies are used for this project?
+Filtering behavior
 
-This project is built with:
+- Global threshold applies to all logs.
+- LLM logs (prefixed with [llm]) use `llm.logLevel` if set, otherwise inherit global threshold.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
 
-## How can I deploy this project?
+### Config file
 
-Simply open [Lovable](https://lovable.dev/projects/a413952b-9bd7-4cb9-b51a-0e2367517ac5) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Path: `~/.qbot/config.json`
+- Example:
+{
+  "mcp": {
+    "url": "http://localhost:3000/mcp",
+    "headers": { "Authorization": "Bearer ..." }
+  },
+  "llm": {
+    "provider": "groq",
+    "model": "llama-3.3-70b-versatile",
+    "apiKeys": { "groq": "<GROQ_API_KEY>", "openrouter": "<OPENROUTER_API_KEY>", "openai": "<OPENAI_API_KEY>", "anthropic": "<ANTHROPIC_API_KEY>" },
+    "baseUrls": { "ollama": "http://localhost:11434/v1" },
+    "logLevel": "info"
+  },
+  "logging": {
+    "level": "info"
+  }
+}
